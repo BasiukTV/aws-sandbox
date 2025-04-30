@@ -7,6 +7,50 @@ Currently only meant to be run locally, while logged into Azure interactively (v
 
 By default this Terraform configuration will provision:
 1. Virtual Private Cloud (VPC)
+2. (by default) Private subnet
+3. (by default) Public subnet
+
+## Input Variable Values (with examples)
+
+```
+org    = "taras"
+app    = "awssbx"
+env    = "test"
+region = "us-east-1"
+
+vpc_cidr             = "10.0.0.0/16"
+enable_dns_support   = true
+enable_dns_hostnames = true
+
+subnets_config = {
+    "private" : {
+        descriptor = "private"
+        cidr       = "10.0.0.0/24"
+        zone       = "us-east-1a"
+    },
+    "public" : {
+        descriptor = "public"
+        cidr       = "10.0.1.0/24"
+        zone       = "us-east-1a"
+    }
+}
+```
+
+## Output Values
+```
+vpc_id = "vpc-0691fb717fff56d24"
+vpc_name = "taras-awssbx-vpc-test-us-east-1"
+
+subnet_ids = {
+  "private" = "subnet-0232141ca05260009"
+  "public" = "subnet-092291a56d070c860"
+}
+
+subnet_names = {
+  "private" = "taras-awssbx-private-subnet-test-us-east-1a"
+  "public" = "taras-awssbx-public-subnet-test-us-east-1a"
+}
+```
 
 ## Usage
 

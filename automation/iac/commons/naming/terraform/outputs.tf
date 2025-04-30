@@ -7,3 +7,8 @@ output "vpc" {
   description = "Standard VPC name for the application."
   value       = format(local.resource_name_template, "vpc")
 }
+
+output "subnet" {
+  description = "Standard Subnet name for the application."
+  value       = format(local.resource_name_template, "subnet")
+}

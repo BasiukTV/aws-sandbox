@@ -5,7 +5,7 @@
 The naming scheme used by the module is:
 * ```{org}-{app}-{descriptor}-{resource}-{index}-{env}-{region/zone}```
 
-Explanation of components:
+Explanation of inputs/components:
 * ```org``` - (optional) the name of the organization owning the resource
 * ```app``` - the name of the app owning the resource
 * ```descriptor``` - (optional) additional app descriptor (like db, api, web, etc.)
@@ -44,6 +44,7 @@ resource "aws_vpc" "vpc" {
 
 ## Supported Resources
 
-| Resource              | Resource Name Shorthand | Usage Example           |
-| --------------------- | ----------------------- | ----------------------- |
-| Virtual Private Cloud | ```vpc```               | ```module.naming.vpc``` |
+| Resource              | Resource Name Shorthand | Usage Example              |
+| --------------------- | ----------------------- | -------------------------- |
+| Subnet                | ```subnet```            | ```module.naming.subnet``` |
+| Virtual Private Cloud | ```vpc```               | ```module.naming.vpc```    |

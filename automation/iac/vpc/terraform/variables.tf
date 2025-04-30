@@ -48,3 +48,26 @@ variable "enable_dns_hostnames" {
   default     = true
 }
 
+# Variables for Subnet configuration
+
+variable "subnets_config" {
+  type = map(object({
+    descriptor = string
+    cidr       = string
+    zone       = string
+  }))
+  description = "List of subnets to create with their configurations."
+
+  default = {
+    "private" : {
+      descriptor = "private"
+      cidr       = "10.0.0.0/24"
+      zone       = "us-east-1a"
+    },
+    "public" : {
+      descriptor = "public"
+      cidr       = "10.0.1.0/24"
+      zone       = "us-east-1a"
+    }
+  }
+}

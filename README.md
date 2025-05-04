@@ -22,7 +22,8 @@ Repo for playing around with some AWS resources.
 
 ## Explored Resources
 
-| AWS Resource | IaC Links                                       | App Links |
-| ------------ | ----------------------------------------------- | --------- |
-| Subnet       | [Terraform](./automation/iac/subnet/terraform/) | -         |
-| VPC          | [Terraform](./automation/iac/vpc/terraform/)    | -         |
+| AWS Resource       | IaC Links                                       | App Links |
+| ------------------ | ----------------------------------------------- | --------- |
+| Network ACL (NACL) | [Terraform](./automation/iac/nacl/terraform/)   | -         |
+| Subnet             | [Terraform](./automation/iac/subnet/terraform/) | -         |
+| VPC                | [Terraform](./automation/iac/vpc/terraform/)    | -         |

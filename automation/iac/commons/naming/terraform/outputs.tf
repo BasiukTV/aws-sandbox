@@ -12,3 +12,8 @@ output "subnet" {
   description = "Standard Subnet name for the application."
   value       = format(local.resource_name_template, "subnet")
 }
+
+output "nacl" {
+  description = "Standard Network ACL name for the application."
+  value       = format(local.resource_name_template, "nacl")
+}

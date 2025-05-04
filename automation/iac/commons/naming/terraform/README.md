@@ -46,5 +46,6 @@ resource "aws_vpc" "vpc" {
 
 | Resource              | Resource Name Shorthand | Usage Example              |
 | --------------------- | ----------------------- | -------------------------- |
+| Network ACL           | ```nacl```              | ```module.naming.nacl```   |
 | Subnet                | ```subnet```            | ```module.naming.subnet``` |
 | Virtual Private Cloud | ```vpc```               | ```module.naming.vpc```    |

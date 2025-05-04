@@ -71,3 +71,56 @@ variable "subnets_config" {
     }
   }
 }
+
+# Variables for Network ACL configuration
+variable "nacl_config" {
+  description = "Configuration for Network ACLs. Each entry defines a NACL and its associated rules. Subnet descriptor must match a key in `subnets_config`."
+
+  type = map(object({
+    subnet_descriptor          = string
+    allow_public_inbound_ssh   = bool
+    allow_public_inbound_http  = bool
+    allow_public_inbound_https = bool
+    allow_public_inbound_ping  = bool
+    allow_public_outbound      = bool
+    custom_inbound_rules = map(object({
+      rule_number = number
+      protocol    = string
+      rule_action = string
+      cidr_block  = string
+      from_port   = number
+      to_port     = number
+    }))
+    custom_outbound_rules = map(object({
+      rule_number = number
+      protocol    = string
+      rule_action = string
+      cidr_block  = string
+      from_port   = number
+      to_port     = number
+    }))
+  }))
+
+  default = {
+    "public" : {
+      subnet_descriptor          = "public"
+      allow_public_inbound_ssh   = true
+      allow_public_inbound_http  = true
+      allow_public_inbound_https = true
+      allow_public_inbound_ping  = true
+      allow_public_outbound      = true
+      custom_inbound_rules       = {}
+      custom_outbound_rules      = {}
+    },
+    "private" : {
+      subnet_descriptor          = "private"
+      allow_public_inbound_ssh   = false
+      allow_public_inbound_http  = false
+      allow_public_inbound_https = false
+      allow_public_inbound_ping  = false
+      allow_public_outbound      = true
+      custom_inbound_rules       = {}
+      custom_outbound_rules      = {}
+    }
+  }
+}

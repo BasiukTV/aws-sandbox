@@ -34,6 +34,29 @@ subnets_config = {
         zone       = "us-east-1a"
     }
 }
+
+nacl_config = {
+  "public" : {
+    subnet_descriptor          = "public"
+    allow_public_inbound_ssh   = true
+    allow_public_inbound_http  = true
+    allow_public_inbound_https = true
+    allow_public_inbound_ping  = true
+    allow_public_outbound      = true
+    custom_inbound_rules       = {}
+    custom_outbound_rules      = {}
+  },
+  "private" : {
+    subnet_descriptor          = "private"
+    allow_public_inbound_ssh   = false
+    allow_public_inbound_http  = false
+    allow_public_inbound_https = false
+    allow_public_inbound_ping  = false
+    allow_public_outbound      = true
+    custom_inbound_rules       = {}
+    custom_outbound_rules      = {}
+  }
+}
 ```
 
 ## Output Values
@@ -49,6 +72,16 @@ subnet_ids = {
 subnet_names = {
   "private" = "taras-awssbx-private-subnet-test-us-east-1a"
   "public" = "taras-awssbx-public-subnet-test-us-east-1a"
+}
+
+nacl_ids = {
+  "private" = "acl-0559d8691f6fc0970"
+  "public" = "acl-0f63364aa8b521302"
+}
+
+nacl_names = {
+  "private" = "taras-awssbx-private-nacl-test-us-east-1"
+  "public" = "taras-awssbx-public-nacl-test-us-east-1"
 }
 ```
 

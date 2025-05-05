@@ -27,3 +27,23 @@ output "nacl_names" {
   description = "A map of Network ACL names keyed by descriptor"
   value       = { for k, v in module.nacl : k => v.nacl_name }
 }
+
+output "igw_id" {
+  description = "The ID of the Internet Gateway"
+  value       = var.enable_internet_gateway ? module.igw[0].igw_id : null
+}
+
+output "igw_name" {
+  description = "The name of the Internet Gateway"
+  value       = var.enable_internet_gateway ? module.igw[0].igw_name : null
+}
+
+output "public_subnet_route_table_id" {
+  description = "The ID of the Route Table"
+  value       = var.enable_internet_gateway ? module.igw[0].route_table_id : null
+}
+
+output "public_subnet_route_table_name" {
+  description = "The name of the Route Table"
+  value       = var.enable_internet_gateway ? module.igw[0].route_table_name : null
+}

@@ -124,3 +124,10 @@ variable "nacl_config" {
     }
   }
 }
+
+# Variables for Internet Gateway configuration
+variable "enable_internet_gateway" {
+  type        = bool
+  description = "Whether to create an Internet Gateway for the VPC public subnet."
+  default     = true
+}

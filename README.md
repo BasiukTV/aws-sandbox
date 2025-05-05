@@ -24,6 +24,7 @@ Repo for playing around with some AWS resources.
 
 | AWS Resource       | IaC Links                                       | App Links |
 | ------------------ | ----------------------------------------------- | --------- |
+| Internet Gateway   | [Terraform](./automation/iac/igw/terraform/)    | -         |
 | Network ACL (NACL) | [Terraform](./automation/iac/nacl/terraform/)   | -         |
 | Subnet             | [Terraform](./automation/iac/subnet/terraform/) | -         |
 | VPC                | [Terraform](./automation/iac/vpc/terraform/)    | -         |

@@ -9,6 +9,7 @@ By default this Terraform configuration will provision:
 1. Virtual Private Cloud (VPC)
 2. (by default) Private subnet
 3. (by default) Public subnet
+4. (by default) Internet Gateway and its Route Table for Public subnet
 
 ## Input Variable Values (with examples)
 
@@ -57,6 +58,8 @@ nacl_config = {
     custom_outbound_rules      = {}
   }
 }
+
+enable_internet_gateway = true
 ```
 
 ## Output Values
@@ -83,6 +86,11 @@ nacl_names = {
   "private" = "taras-awssbx-private-nacl-test-us-east-1"
   "public" = "taras-awssbx-public-nacl-test-us-east-1"
 }
+
+igw_name = "taras-awssbx-private-igw-test-us-east-1"
+igw_id   = "igw-092291a56d070c860"
+public_subnet_route_table_name = "taras-awssbx-private-rt-test-us-east-1"
+public_subnet_route_table_id   = "rt-092291a56d070c860"
 ```
 
 ## Usage

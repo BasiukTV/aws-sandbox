@@ -17,3 +17,13 @@ output "nacl" {
   description = "Standard Network ACL name for the application."
   value       = format(local.resource_name_template, "nacl")
 }
+
+output "internet_gateway" {
+  description = "Standard Internet Gateway name for the application."
+  value       = format(local.resource_name_template, "igw")
+}
+
+output "route_table" {
+  description = "Standard Route Table name for the application."
+  value       = format(local.resource_name_template, "rt")
+}

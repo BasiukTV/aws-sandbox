@@ -46,6 +46,8 @@ resource "aws_vpc" "vpc" {
 
 | Resource              | Resource Name Shorthand | Usage Example              |
 | --------------------- | ----------------------- | -------------------------- |
+| Internat Gateway      | ```igw```               | ```module.naming.igw```    |
 | Network ACL           | ```nacl```              | ```module.naming.nacl```   |
+| Route Table           | ```rt```                | ```module.naming.rt```     |
 | Subnet                | ```subnet```            | ```module.naming.subnet``` |
 | Virtual Private Cloud | ```vpc```               | ```module.naming.vpc```    |

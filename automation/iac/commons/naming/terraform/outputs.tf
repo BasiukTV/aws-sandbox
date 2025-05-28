@@ -27,3 +27,8 @@ output "route_table" {
   description = "Standard Route Table name for the application."
   value       = format(local.resource_name_template, "rt")
 }
+
+output "iam_policy" {
+  description = "Standard IAM Policy name for the application."
+  value       = format(local.resource_name_template, "iampol")
+}

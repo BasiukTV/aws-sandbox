@@ -44,10 +44,12 @@ resource "aws_vpc" "vpc" {
 
 ## Supported Resources
 
-| Resource              | Resource Name Shorthand | Usage Example              |
-| --------------------- | ----------------------- | -------------------------- |
-| Internat Gateway      | ```igw```               | ```module.naming.igw```    |
-| Network ACL           | ```nacl```              | ```module.naming.nacl```   |
-| Route Table           | ```rt```                | ```module.naming.rt```     |
-| Subnet                | ```subnet```            | ```module.naming.subnet``` |
-| Virtual Private Cloud | ```vpc```               | ```module.naming.vpc```    |
+| Resource              | Resource Name Shorthand | Usage Example                        |
+| --------------------- | ----------------------- | ------------------------------------ |
+| IAM Policy            | ```iampol```            | ```module.naming.iam_policy```       |
+| IAM User              | ```iamusr```            | ```module.naming.iam_user```         |
+| Internet Gateway      | ```igw```               | ```module.naming.internet_gateway``` |
+| Network ACL           | ```nacl```              | ```module.naming.nacl```             |
+| Route Table           | ```rt```                | ```module.naming.route_table```      |
+| Subnet                | ```subnet```            | ```module.naming.subnet```           |
+| Virtual Private Cloud | ```vpc```               | ```module.naming.vpc```              |

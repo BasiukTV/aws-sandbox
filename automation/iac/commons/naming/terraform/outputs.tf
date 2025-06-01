@@ -3,19 +3,14 @@ output "resource_name_template" {
   value       = local.resource_name_template
 }
 
-output "vpc" {
-  description = "Standard VPC name for the application."
-  value       = format(local.resource_name_template, "vpc")
+output "iam_policy" {
+  description = "Standard IAM Policy name for the application."
+  value       = format(local.resource_name_template, "iampol")
 }
 
-output "subnet" {
-  description = "Standard Subnet name for the application."
-  value       = format(local.resource_name_template, "subnet")
-}
-
-output "nacl" {
-  description = "Standard Network ACL name for the application."
-  value       = format(local.resource_name_template, "nacl")
+output "iam_user" {
+  description = "Standard IAM User name for the application."
+  value       = format(local.resource_name_template, "iamusr")
 }
 
 output "internet_gateway" {
@@ -23,12 +18,22 @@ output "internet_gateway" {
   value       = format(local.resource_name_template, "igw")
 }
 
+output "nacl" {
+  description = "Standard Network ACL name for the application."
+  value       = format(local.resource_name_template, "nacl")
+}
+
 output "route_table" {
   description = "Standard Route Table name for the application."
   value       = format(local.resource_name_template, "rt")
 }
 
-output "iam_policy" {
-  description = "Standard IAM Policy name for the application."
-  value       = format(local.resource_name_template, "iampol")
+output "subnet" {
+  description = "Standard Subnet name for the application."
+  value       = format(local.resource_name_template, "subnet")
+}
+
+output "vpc" {
+  description = "Standard VPC name for the application."
+  value       = format(local.resource_name_template, "vpc")
 }

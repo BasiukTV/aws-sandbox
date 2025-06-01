@@ -6,7 +6,7 @@ Currently only meant to be run locally, while logged into Azure interactively (v
 ## Provisioned Infra
 
 By default this Terraform configuration will provision:
-1. IAM Policy with specified permissions
+1. IAM Policy with specified permissions, attached to an IAM User (if provided).
 
 ## Input Variables (with example values)
 

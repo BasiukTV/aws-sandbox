@@ -22,3 +22,11 @@ data "aws_iam_policy_document" "aimpol_doc" {
     resources = var.policy_statement.resources
   }
 }
+
+resource "aws_iam_user_policy_attachment" "test-attach" {
+  # Only attach the IAM policy to the user if the user name is provided
+  count = var.iam_user_name == null ? 0 : 1
+
+  user       = var.iam_user_name
+  policy_arn = aws_iam_policy.aimpol.arn
+}

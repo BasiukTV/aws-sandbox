@@ -31,6 +31,14 @@ variable "region" {
 
 # Variables for the IAM Policy
 
+variable "iam_user_name" {
+  type        = string
+  description = "The name of the IAM user to attach the policy to. If not provided, the policy will not be attached to any user."
+
+  # Default is null, meaning the policy won't be attached to any user unless specified.
+  default     = null
+}
+
 variable "policy_description" {
   type        = string
   description = "Description of the IAM policy."

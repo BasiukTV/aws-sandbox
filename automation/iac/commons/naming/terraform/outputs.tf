@@ -3,6 +3,11 @@ output "resource_name_template" {
   value       = local.resource_name_template
 }
 
+output "ec2_instance" {
+  description = "Standard EC2 Instance name for the application."
+  value       = format(local.resource_name_template, "ec2")
+}
+
 output "iam_policy" {
   description = "Standard IAM Policy name for the application."
   value       = format(local.resource_name_template, "iampol")

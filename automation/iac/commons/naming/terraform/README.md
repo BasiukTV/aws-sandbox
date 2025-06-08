@@ -46,6 +46,7 @@ resource "aws_vpc" "vpc" {
 
 | Resource              | Resource Name Shorthand | Usage Example                        |
 | --------------------- | ----------------------- | ------------------------------------ |
+| EC2                   | ```ec2```               | ```module.naming.ec2_instance```     |
 | IAM Policy            | ```iampol```            | ```module.naming.iam_policy```       |
 | IAM User              | ```iamusr```            | ```module.naming.iam_user```         |
 | Internet Gateway      | ```igw```               | ```module.naming.internet_gateway``` |

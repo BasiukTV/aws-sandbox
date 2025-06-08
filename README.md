@@ -22,11 +22,12 @@ Repo for playing around with some AWS resources.
 
 ## Explored Resources
 
-| AWS Resource       | IaC Links                                           | App Links |
-| ------------------ | --------------------------------------------------- | --------- |
-| IAM Policy         | [Terraform](./automation/iac/iam_policy/terraform/) | -         |
-| IAM User           | [Terraform](./automation/iac/iam_user/terraform/)   | -         |
-| Internet Gateway   | [Terraform](./automation/iac/igw/terraform/)        | -         |
-| Network ACL (NACL) | [Terraform](./automation/iac/nacl/terraform/)       | -         |
-| Subnet             | [Terraform](./automation/iac/subnet/terraform/)     | -         |
-| VPC                | [Terraform](./automation/iac/vpc/terraform/)        | -         |
+| AWS Resource                | IaC Links                                           | App Links |
+| --------------------------- | --------------------------------------------------- | --------- |
+| IAM Policy                  | [Terraform](./automation/iac/iam_policy/terraform/) | -         |
+| IAM User                    | [Terraform](./automation/iac/iam_user/terraform/)   | -         |
+| Internet Gateway            | [Terraform](./automation/iac/igw/terraform/)        | -         |
+| Network ACL (NACL)          | [Terraform](./automation/iac/nacl/terraform/)       | -         |
+| Simple Storage Service (S3) | [CloudFormation](./automation/iac/s3/cfn/)          | -         |
+| Subnet                      | [Terraform](./automation/iac/subnet/terraform/)     | -         |
+| VPC                         | [Terraform](./automation/iac/vpc/terraform/)        | -         |

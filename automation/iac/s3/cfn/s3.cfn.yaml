@@ -1,0 +1,87 @@
+Description: CloudFormation template to create an S3 bucket
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  Org:
+    Type: String
+    Description: The name of the organization owning the S3 bucket
+    Default: taras
+  App:
+    Type: String
+    Description: The name of the application using the S3 bucket
+    Default: awssbx
+  Descriptor:
+    Type: String
+    Description: A descriptor for the S3 bucket (e.g., logs, backups)
+    Default: main
+  Environment:
+    Type: String
+    Description: The environment for the S3 bucket (e.g., test, prod)
+    Default: test
+  Region:
+    Type: String
+    Description: The AWS region where the S3 bucket will be created
+    Default: us-east-1
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${Org}-${App}-${Descriptor}-s3-${Environment}-${Region}"
+      AccessControl: Private
+      Tags:
+        - Key: Name
+          Value: !Sub "${Org}-${App}-${Descriptor}-s3-${Environment}-${Region}"
+  
+  S3BucketUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: !Sub "${Org}-${App}-${Descriptor}-s3-user-${Environment}"
+      Path: "/"
+      Tags:
+        - Key: Name
+          Value: !Sub "${Org}-${App}-${Descriptor}-s3-user-${Environment}"
+
+  S3BucketUserAccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      UserName: !Ref S3BucketUser
+
+  S3BucketUserPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "${Org}-${App}-${Descriptor}-s3-access-policy-${Environment}"
+      Users:
+        - !Ref S3BucketUser
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - "s3:GetObject"
+              - "s3:PutObject"
+              - "s3:ListBucket"
+              - "s3:DeleteObject"
+            Resource:
+              - !Sub "arn:aws:s3:::${S3Bucket}"
+              - !Sub "arn:aws:s3:::${S3Bucket}/*"
+
+Outputs:
+  S3BucketName:
+    Description: The name of the created S3 bucket
+    Value: !Ref S3Bucket
+  S3BucketDomainName:
+    Description: The domain name of the created S3 bucket
+    Value: !GetAtt S3Bucket.DomainName
+  S3BucketArn:
+    Description: The ARN of the created S3 bucket
+    Value: !GetAtt S3Bucket.Arn
+  S3BucketUserName:
+    Description: The name of the IAM user with access to the S3 bucket
+    Value: !Ref S3BucketUser
+  S3BucketUserAccessKeyId:
+    Description: The access key ID for the IAM user
+    Value: !Ref S3BucketUserAccessKey
+  S3BucketUserSecretAccessKey:
+    Description: The secret access key for the IAM user
+    Value: !GetAtt S3BucketUserAccessKey.SecretAccessKey

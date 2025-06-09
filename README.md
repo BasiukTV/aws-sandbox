@@ -7,27 +7,38 @@ Repo for playing around with some AWS resources.
 3. [AWS User Credentials](https://docs.aws.amazon.com/cli/v1/userguide/cli-authentication-user.html)
 4. (one or more) IaC Tools as appropriate
     * [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+5. (one or more) Programming Language build tools as appropriate
+    * [Go](https://go.dev/doc/install)
+    * [Python](https://www.python.org/downloads/)
 
 ## Folder Structure
 
 ```
 .
-└── automation            # Folders for various automation code/scripts/configuration
-    └── iac               # Infrastructure As Code Folder
-        ├── vpc           # Folder for a specific AWS resource
-        │   ├── terraform # Folder for a specific IaC tool provisioning that resource
-        │   └── pulumi    # Another IaC tool
-        └── ec2           # Another AWS resource
+├── apps                        # Applications that use AWS resources
+│   └── s3                      # Apps that use S3
+│       └── uploader-downloader # Specific App that uses the S3
+│           └── go              # Go implementation of S3 App
+├── automation                  # Automation scripts and IaC
+│   └── iac                     # Infrastructure as Code
+│       ├── ec2                 # EC2 related resources
+│       │   └── terraform       # Terraform scripts for EC2
+│       ├── ...                 # Other AWS resources
+│       ├── s3                  # S3 related resources
+│       │   └── cfn             # CloudFormation scripts for S3
+│       └── vpc                 # VPC related resources
+│           └── terraform       # Terraform scripts for VPC
+└── README.md                   # This file
 ```
 
 ## Explored Resources
 
-| AWS Resource                | IaC Links                                           | App Links |
-| --------------------------- | --------------------------------------------------- | --------- |
-| IAM Policy                  | [Terraform](./automation/iac/iam_policy/terraform/) | -         |
-| IAM User                    | [Terraform](./automation/iac/iam_user/terraform/)   | -         |
-| Internet Gateway            | [Terraform](./automation/iac/igw/terraform/)        | -         |
-| Network ACL (NACL)          | [Terraform](./automation/iac/nacl/terraform/)       | -         |
-| Simple Storage Service (S3) | [CloudFormation](./automation/iac/s3/cfn/)          | -         |
-| Subnet                      | [Terraform](./automation/iac/subnet/terraform/)     | -         |
-| VPC                         | [Terraform](./automation/iac/vpc/terraform/)        | -         |
+| AWS Resource                | IaC Links                                           | App Links                                                   |
+| --------------------------- | --------------------------------------------------- | ----------------------------------------------------------- |
+| IAM Policy                  | [Terraform](./automation/iac/iam_policy/terraform/) | -                                                           |
+| IAM User                    | [Terraform](./automation/iac/iam_user/terraform/)   | -                                                           |
+| Internet Gateway            | [Terraform](./automation/iac/igw/terraform/)        | -                                                           |
+| Network ACL (NACL)          | [Terraform](./automation/iac/nacl/terraform/)       | -                                                           |
+| Simple Storage Service (S3) | [CloudFormation](./automation/iac/s3/cfn/)          | [Go Uploader-Downloader](./apps/s3/uploader-downloader/go/) |
+| Subnet                      | [Terraform](./automation/iac/subnet/terraform/)     | -                                                           |
+| VPC                         | [Terraform](./automation/iac/vpc/terraform/)        | -                                                           |

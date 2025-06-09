@@ -1,0 +1,3 @@
+# This file instructs Git to ignore the contents of the bin directory, except for this file
+*
+!.gitignore

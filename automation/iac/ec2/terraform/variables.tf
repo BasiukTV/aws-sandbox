@@ -46,3 +46,9 @@ variable "instance_type" {
   description = "The instance type for the EC2 instance."
   default     = "t2.micro"
 }
+
+variable "associate_public_ip" {
+  type        = bool
+  description = "Whether to associate a public IP address with the EC2 instance."
+  default     = true
+}

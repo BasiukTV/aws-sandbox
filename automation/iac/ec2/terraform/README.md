@@ -7,6 +7,7 @@ Currently only meant to be run locally, while logged into Azure interactively (v
 
 By default this Terraform configuration will provision:
 1. EC2 instance
+2. (by default, configurable) Public Elastic IP (EIP) for the instance
 
 ## Input Variable Values (with examples)
 
@@ -16,14 +17,19 @@ app        = "awssbx"
 descriptor = null
 env        = "test"
 region     = "us-east-1"
+
+ami                 = "ami-09e6f87a47903347c" # Amazon Linux 2023 kernel-6.1 AMI
+instance_type       = "t2.micro"
+associate_public_ip = true
 ```
 
 ## Output Values Example
 ```
-ec2_instance_id = "i-04325c6919c4cf245"
-ec2_instance_private_ip = "172.31.82.151"
-ec2_instance_public_ip = "44.202.5.211"
+ec2_instance_id = "i-0da8ac3c70b5a9103"
+ec2_instance_private_ip = "172.31.25.234"
+ec2_instance_public_ip = "35.172.245.183"
 ec2_name = "taras-awssbx-ec2-test-us-east-1"
+eip_name = "taras-awssbx-eip-test-us-east-1"
 ```
 
 ## Usage

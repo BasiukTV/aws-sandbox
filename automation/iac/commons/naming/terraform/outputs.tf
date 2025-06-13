@@ -8,6 +8,11 @@ output "ec2_instance" {
   value       = format(local.resource_name_template, "ec2")
 }
 
+output "eip" {
+  description = "Standard Elastic IP name for the application."
+  value       = format(local.resource_name_template, "eip")
+}
+
 output "iam_policy" {
   description = "Standard IAM Policy name for the application."
   value       = format(local.resource_name_template, "iampol")

@@ -38,6 +38,11 @@ output "route_table" {
   value       = format(local.resource_name_template, "rt")
 }
 
+output "security_group" {
+  description = "Standard Security Group name for the application."
+  value       = format(local.resource_name_template, "sg")
+}
+
 output "subnet" {
   description = "Standard Subnet name for the application."
   value       = format(local.resource_name_template, "subnet")

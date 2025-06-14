@@ -53,5 +53,6 @@ resource "aws_vpc" "vpc" {
 | Internet Gateway      | ```igw```               | ```module.naming.internet_gateway``` |
 | Network ACL           | ```nacl```              | ```module.naming.nacl```             |
 | Route Table           | ```rt```                | ```module.naming.route_table```      |
+| Security Group        | ```sg```                | ```module.naming.security_group```   |
 | Subnet                | ```subnet```            | ```module.naming.subnet```           |
 | Virtual Private Cloud | ```vpc```               | ```module.naming.vpc```              |

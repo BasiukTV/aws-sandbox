@@ -22,3 +22,13 @@ output "eip_name" {
   description = "The name of the Elastic IP"
   value       = one(aws_eip.eip[*].tags["Name"])
 }
+
+output "eip_id" {
+  description = "The ID of the Elastic IP"
+  value       = one(aws_eip.eip[*].id)
+}
+
+output "security_group_ids" {
+  description = "The IDs of the EC2 instance security groups"
+  value       = aws_instance.ec2.vpc_security_group_ids
+}

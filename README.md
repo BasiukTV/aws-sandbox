@@ -33,13 +33,14 @@ Repo for playing around with some AWS resources.
 
 ## Explored Resources
 
-| AWS Resource                | IaC Links                                           | App Links                                                   |
-| --------------------------- | --------------------------------------------------- | ----------------------------------------------------------- |
-| EC2                         | [Terraform](./automation/iac/ec2/terraform/)        | -                                                           |
-| IAM Policy                  | [Terraform](./automation/iac/iam_policy/terraform/) | -                                                           |
-| IAM User                    | [Terraform](./automation/iac/iam_user/terraform/)   | -                                                           |
-| Internet Gateway            | [Terraform](./automation/iac/igw/terraform/)        | -                                                           |
-| Network ACL (NACL)          | [Terraform](./automation/iac/nacl/terraform/)       | -                                                           |
-| Simple Storage Service (S3) | [CloudFormation](./automation/iac/s3/cfn/)          | [Go Uploader-Downloader](./apps/s3/uploader-downloader/go/) |
-| Subnet                      | [Terraform](./automation/iac/subnet/terraform/)     | -                                                           |
-| VPC                         | [Terraform](./automation/iac/vpc/terraform/)        | -                                                           |
+| AWS Resource                | IaC Links                                               | App Links                                                   |
+| --------------------------- | ------------------------------------------------------- | ----------------------------------------------------------- |
+| EC2                         | [Terraform](./automation/iac/ec2/terraform/)            | -                                                           |
+| IAM Policy                  | [Terraform](./automation/iac/iam_policy/terraform/)     | -                                                           |
+| IAM User                    | [Terraform](./automation/iac/iam_user/terraform/)       | -                                                           |
+| Internet Gateway            | [Terraform](./automation/iac/igw/terraform/)            | -                                                           |
+| Network ACL (NACL)          | [Terraform](./automation/iac/nacl/terraform/)           | -                                                           |
+| Simple Storage Service (S3) | [CloudFormation](./automation/iac/s3/cfn/)              | [Go Uploader-Downloader](./apps/s3/uploader-downloader/go/) |
+| Security Group              | [Terraform](./automation/iac/security_group/terraform/) | -                                                           |
+| Subnet                      | [Terraform](./automation/iac/subnet/terraform/)         | -                                                           |
+| VPC                         | [Terraform](./automation/iac/vpc/terraform/)            | -                                                           |

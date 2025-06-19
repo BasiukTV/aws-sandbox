@@ -7,12 +7,12 @@ module "igw" {
 
   org        = var.org
   app        = var.app
-  descriptor = "private"
+  descriptor = "public"
   env        = var.env
   region     = var.region
 
   vpc_id = aws_vpc.vpc.id
   subnet_ids = {
-    "public" : module.subnets["private"].subnet_id
+    "public" : module.subnets["public"].subnet_id
   }
 }

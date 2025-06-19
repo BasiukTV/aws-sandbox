@@ -53,11 +53,29 @@ variable "associate_public_ip" {
   default     = true
 }
 
+variable "subnet_config" {
+  description = "Subnet configuration. Currently supports either an existing subnet ID or a new quick subnet configuration."
+  type = object({
+    existing_subnet_id = optional(string, null)
+
+    new_quick_subnet = optional(object({
+      public_subnet = optional(bool, true)
+    }))
+  })
+  default = {
+    existing_subnet_id = null
+
+    new_quick_subnet = {
+      public_subnet = true
+    }
+  }
+}
+
 variable "security_group" {
   description = "Optional security group configuration. Provide either existing security group ID or create a new one with rules."
   type = object({
     # Optional existing security group ID to use. If provided, a new security group will not be created.
-    existingsecurity_group_id = optional(string)
+    existing_security_group_id = optional(string)
 
     # Optional description for the security group. This will not be used if security_group_id is provided.
     new_security_group = optional(object({
@@ -86,7 +104,7 @@ variable "security_group" {
     }))
   })
   default = {
-    existingsecurity_group_id = null
+    existing_security_group_id = null
 
     new_security_group = {
       security_group_description = null

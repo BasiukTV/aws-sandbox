@@ -8,6 +8,11 @@ output "ec2_instance" {
   value       = format(local.resource_name_template, "ec2")
 }
 
+output "efs" {
+  description = "Standard EFS name for the application."
+  value       = format(local.resource_name_template, "efs")
+}
+
 output "eip" {
   description = "Standard Elastic IP name for the application."
   value       = format(local.resource_name_template, "eip")

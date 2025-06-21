@@ -36,6 +36,7 @@ Repo for playing around with some AWS resources.
 | AWS Resource                | IaC Links                                               | App Links                                                   |
 | --------------------------- | ------------------------------------------------------- | ----------------------------------------------------------- |
 | EC2                         | [Terraform](./automation/iac/ec2/terraform/)            | -                                                           |
+| EFS                         | [Terraform](./automation/iac/efs/terraform/)            | -                                                           |
 | IAM Policy                  | [Terraform](./automation/iac/iam_policy/terraform/)     | -                                                           |
 | IAM User                    | [Terraform](./automation/iac/iam_user/terraform/)       | -                                                           |
 | Internet Gateway            | [Terraform](./automation/iac/igw/terraform/)            | -                                                           |

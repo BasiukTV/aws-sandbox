@@ -44,15 +44,16 @@ resource "aws_vpc" "vpc" {
 
 ## Supported Resources
 
-| Resource              | Resource Name Shorthand | Usage Example                        |
-| --------------------- | ----------------------- | ------------------------------------ |
-| EC2                   | ```ec2```               | ```module.naming.ec2_instance```     |
-| Elastic IP (EIP)      | ```eip```               | ```module.naming.eip```              |
-| IAM Policy            | ```iampol```            | ```module.naming.iam_policy```       |
-| IAM User              | ```iamusr```            | ```module.naming.iam_user```         |
-| Internet Gateway      | ```igw```               | ```module.naming.internet_gateway``` |
-| Network ACL           | ```nacl```              | ```module.naming.nacl```             |
-| Route Table           | ```rt```                | ```module.naming.route_table```      |
-| Security Group        | ```sg```                | ```module.naming.security_group```   |
-| Subnet                | ```subnet```            | ```module.naming.subnet```           |
-| Virtual Private Cloud | ```vpc```               | ```module.naming.vpc```              |
+| Resource                  | Resource Name Shorthand | Usage Example                        |
+| ------------------------- | ----------------------- | ------------------------------------ |
+| EC2                       | ```ec2```               | ```module.naming.ec2_instance```     |
+| Elastic File System (EFS) | ```efs```               | ```module.naming.efs```              |
+| Elastic IP (EIP)          | ```eip```               | ```module.naming.eip```              |
+| IAM Policy                | ```iampol```            | ```module.naming.iam_policy```       |
+| IAM User                  | ```iamusr```            | ```module.naming.iam_user```         |
+| Internet Gateway          | ```igw```               | ```module.naming.internet_gateway``` |
+| Network ACL               | ```nacl```              | ```module.naming.nacl```             |
+| Route Table               | ```rt```                | ```module.naming.route_table```      |
+| Security Group            | ```sg```                | ```module.naming.security_group```   |
+| Subnet                    | ```subnet```            | ```module.naming.subnet```           |
+| Virtual Private Cloud     | ```vpc```               | ```module.naming.vpc```              |
